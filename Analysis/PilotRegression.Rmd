@@ -76,7 +76,12 @@ read_chunk("./Analysis/PilotRegression.R")
 ```{r Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim, echo=echoChunks, results='show', message=TRUE}
 ```
 
+## Appendix. InteractionPlayground
 
+```{r InteractionPlayground, echo=echoChunks, results='show', message=TRUE}
+```
+
+## Session Information
 For the sake of documentation and reproducibility, the current report was build on a system using the following software.
 
 ```{r session_info, echo=FALSE}

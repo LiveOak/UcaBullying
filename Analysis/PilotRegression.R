@@ -82,3 +82,19 @@ PlotEffects(m)
 PlotInteraction(dsPlot=ds, xName="PeerRatedSelfEsteem", yName="PeerRatedDefendsTheVictim")
 
 rm(m)
+#####################################
+## @knitr InteractionPlayground
+m <- lm(PeerRatedDefendsTheVictim ~ 1 + Gender*PeerRatedDefensiveEgotism, data=ds)
+m <- lm(PeerRatedDefendsTheVictim ~ 1 + Gender + PeerRatedDefensiveEgotism + Gender:PeerRatedDefensiveEgotism, data=ds)
+m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + as.numeric(ds$Gender) * scale(ds$PeerRatedDefensiveEgotism))
+m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * ds$PeerRatedDefensiveEgotism)
+m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * scale(ds$PeerRatedDefensiveEgotism))
+summary(m)
+
+mS <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + ds$ZScoresGender * ds$ZScoresPeerRatedDefensiveEgotism)
+mS <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + ds$Gender * ds$ZScoresPeerRatedDefensiveEgotism)
+summary(mS)
+
+rm(m, mS)
+
+qplot(scale(ds$PeerRatedDefensiveEgotism), ds$ZScoresPeerRatedDefensiveEgotism)

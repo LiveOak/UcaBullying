@@ -242,12 +242,65 @@ F-statistic: 5.24 on 3 and 88 DF,  p-value: 0.00225
 <img src="figure_rmd/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim1.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="600px" /><img src="figure_rmd/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim2.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="600px" />
 
 
+## Appendix. InteractionPlayground
 
+
+```
+
+Call:
+lm(formula = ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * 
+    scale(ds$PeerRatedDefensiveEgotism))
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.9485 -0.2598  0.0351  0.2465  0.9933 
+
+Coefficients:
+                                                                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                                                       0.67835    0.04795   14.15   <2e-16 ***
+scale(as.numeric(ds$Gender))                                      0.08682    0.04883    1.78    0.079 .  
+scale(ds$PeerRatedDefensiveEgotism)                               0.00278    0.04821    0.06    0.954    
+scale(as.numeric(ds$Gender)):scale(ds$PeerRatedDefensiveEgotism)  0.09551    0.04911    1.94    0.055 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.427 on 88 degrees of freedom
+Multiple R-squared:  0.0675,	Adjusted R-squared:  0.0357 
+F-statistic: 2.12 on 3 and 88 DF,  p-value: 0.103
+```
+
+```
+
+Call:
+lm(formula = ds$PeerRatedDefendsTheVictim ~ 1 + ds$Gender * ds$ZScoresPeerRatedDefensiveEgotism)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.9490 -0.2599  0.0359  0.2460  0.9933 
+
+Coefficients:
+                                                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                                           0.6074     0.0603   10.07  2.6e-16 ***
+ds$GenderFemale                                       0.1759     0.0990    1.78    0.079 .  
+ds$ZScoresPeerRatedDefensiveEgotism                  -0.0750     0.0606   -1.24    0.219    
+ds$GenderFemale:ds$ZScoresPeerRatedDefensiveEgotism   0.1932     0.0996    1.94    0.056 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.427 on 88 degrees of freedom
+Multiple R-squared:  0.0672,	Adjusted R-squared:  0.0354 
+F-statistic: 2.11 on 3 and 88 DF,  p-value: 0.104
+```
+
+<img src="figure_rmd/InteractionPlayground.png" title="plot of chunk InteractionPlayground" alt="plot of chunk InteractionPlayground" width="600px" />
+
+
+## Session Information
 For the sake of documentation and reproducibility, the current report was build on a system using the following software.
 
 
 ```
-Report created by Will at 2014-01-29, 22:19:11 -0600
+Report created by Will at 2014-01-30, 10:21:40 -0600
 ```
 
 ```
