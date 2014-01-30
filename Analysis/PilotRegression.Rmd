@@ -24,7 +24,7 @@ opts_chunk$set(
 )
 echoChunks <- FALSE
 options(width=120) #So the output is 50% wider than the default.
-read_chunk("./Analaysis/PilotRegression.R") 
+read_chunk("./Analysis/PilotRegression.R") 
 ```
 <!-- Load the packages.  Suppress the output when loading packages. --> 
 ```{r LoadPackages, echo=echoChunks, message=FALSE}
@@ -46,9 +46,36 @@ read_chunk("./Analaysis/PilotRegression.R")
 ```{r TweakDatasets, echo=echoChunks, results='show', message=FALSE}
 ```
 
-## Chunk 1
-```{r Chunk01, echo=echoChunks, results='show', message=TRUE}
+## 1. Gender_PeerRatedDefensiveEgotism_PeerRatedBullying
+*Gender, defensive egotism, and bullying.* We regressed peer-rated bullying (Column B in the Excel file, Will) onto gender (Column D), peer-rated defensive egotism (Column F), and the interaction term (Column G). 
+
+```{r Gender_PeerRatedDefensiveEgotism_PeerRatedBullying, echo=echoChunks, results='show', message=TRUE}
 ```
+
+## 2. Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism
+*Gender, defensive egotism, and assists or supports the bully.* When we re-ran the analyses above with peer-rated assists or supports the bully as the dependent variable (Column H, Will) (rather than peer-rated bullying), the pattern was almost identical to that in Figure 1. 
+
+```{r Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism, echo=echoChunks, results='show', message=TRUE}
+```
+
+## 3. Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression
+*Gender, defensive egotism and social aggression.* We regressed teacher-rated social aggression (Column I, Will) onto gender (Column D), teacher-rated defensive egotism (Column K), and the interaction term (Column L), 
+
+```{r Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression, echo=echoChunks, results='show', message=TRUE}
+```
+
+## 4. Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying
+*Gender, self-esteem and victim of bullying.* We regressed peer-rated victim of bullying (Column M) onto gender (Column D), peer-rated self-esteem (Column O), and the interaction term (Column P) 
+
+```{r Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying, echo=echoChunks, results='show', message=TRUE}
+```
+
+## 5. Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim
+*Gender, self-esteem and defends the victim of bullying*. We regressed peer-rated defends the victim (Column Q) onto gender (Column D), peer-rated self-esteem (Column O), and the interaction term (Column P) 
+
+```{r Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim, echo=echoChunks, results='show', message=TRUE}
+```
+
 
 For the sake of documentation and reproducibility, the current report was build on a system using the following software.
 

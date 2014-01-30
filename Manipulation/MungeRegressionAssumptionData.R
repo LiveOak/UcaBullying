@@ -7,8 +7,7 @@ require(reshape2) #For converting wide to long
 #####################################
 ## DeclareGlobals
 pathInput <- "./Data/Original/ForRegressionAssumptions.csv"
-pathOutput <- "./Data/Derived/ForRegressionAssumptions.rda"
-
+pathOutput <- "./Data/Derived/ForRegressionAssumptions.rds"
 
 #####################################
 ## LoadDatasets
@@ -18,4 +17,28 @@ ds <- read.csv(pathInput, stringsAsFactors=FALSE)
 #####################################
 ## TweakDatasets
 
-# ds <- plyr::rename(ds, replace=c())
+ds <- plyr::rename(ds, replace=c(
+  "Subnum" = "SubjectNumber"
+  , "Peer.rated.Bullying" = "PeerRatedBullying"
+  , "Sex..male...1." = "Gender"
+  , "Zscores.Sex" = "ZScoresGender"
+  , "Peer.rated.Defensive.Egotism" = "PeerRatedDefensiveEgotism"
+  , "Zscores.Peer.rated.Defensive.Egotism" = "ZScoresPeerRatedDefensiveEgotism"
+  , "ZSex.X.ZPeer.Defensive.Egotism" = "ZGenderByZPeerDefensiveEgotism"
+  , "Peer.rated.Assists.SupportsBully" = "PeerRatedAssistsSupportsBully"
+  , "Teacher.rated.Social.Aggression" = "TeacherRatedSocialAggression"
+  , "Teacher.rated.Defensive.Egotism" = "TeacherRatedDefensiveEgotism"
+  , "Zscores.Teacher.rated.Defensive.Egotism" = "ZScoreTeacherRatedDefensiveEgotism"
+  , "ZSex.X.ZTeacher.Defesnive.Egotism" = "ZGenderByZTeacherDefesniveEgotism"
+  , "Peer.rated.Victim.of.Bullying" = "PeerRatedVictimOfBullying"
+  , "Peer.rated.Self.esteem" = "PeerRatedSelfEsteem"
+  , "Zscores.Peer.rated.Self.esteem" = "ZScorePeerRatedSelfEsteem"
+  , "ZSex.X.ZPeer.rated.Self.esteem" = "ZGenderByZPeerRatedSelfEsteem"
+  , "Peer.rated.Defends.the.Victim" = "PeerRatedDefendsTheVictim"
+))
+
+ds$Gender <- factor(ds$Gender, levels=1:2, labels=c("Male", "Female"))
+
+#####################################
+## Save data as Rds (ie a compressed R data file)
+saveRDS(object=ds, file=pathOutput, compress="xz")
