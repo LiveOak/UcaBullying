@@ -17,9 +17,9 @@ opts_chunk$set(
     results='show', 
     comment = NA, 
     tidy = FALSE,
-    fig.width = 5.5, 
+    fig.width = 6.5, 
     fig.height = 4, 
-    out.width = "600px", #This affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
+    out.width = "800px", #This affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
     fig.path = 'figure_raw/',     
     dev = "png",
 #     dev = "pdf",
@@ -83,6 +83,7 @@ read_chunk("./Analysis/PilotRegressionRaw.R")
 ## 1. Gender_PeerRatedDefensiveEgotism_PeerRatedBullying
 *Gender, defensive egotism, and bullying.* We regressed peer-rated bullying (Column B in the Excel file, Will) onto gender (Column D), peer-rated defensive egotism (Column F), and the interaction term (Column G). 
 
+<img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying1.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying2.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying3.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying4.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying5.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" width="800px" />
 
 ```
 
@@ -108,12 +109,11 @@ Multiple R-squared:  0.253,	Adjusted R-squared:  0.227
 F-statistic: 9.92 on 3 and 88 DF,  p-value: 1.06e-05
 ```
 
-<img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying1.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" width="600px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying2.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" width="600px" />
-
 
 ## 2. Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism
 *Gender, defensive egotism, and assists or supports the bully.* When we re-ran the analyses above with peer-rated assists or supports the bully as the dependent variable (Column H, Will) (rather than peer-rated bullying), the pattern was almost identical to that in Figure 1. 
 
+<img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism1.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism2.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism3.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism4.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" width="800px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism5.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" width="800px" />
 
 ```
 
@@ -139,12 +139,11 @@ Multiple R-squared:  0.29,	Adjusted R-squared:  0.265
 F-statistic:   12 on 3 and 88 DF,  p-value: 1.22e-06
 ```
 
-<img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism1.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" width="600px" /><img src="figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism2.png" title="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" alt="plot of chunk Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism" width="600px" />
-
 
 ## 3. Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression
 *Gender, defensive egotism and social aggression.* We regressed teacher-rated social aggression (Column I, Will) onto gender (Column D), teacher-rated defensive egotism (Column K), and the interaction term (Column L), 
 
+<img src="figure_raw/Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression1.png" title="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" alt="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" width="800px" /><img src="figure_raw/Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression2.png" title="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" alt="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" width="800px" /><img src="figure_raw/Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression3.png" title="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" alt="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" width="800px" /><img src="figure_raw/Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression4.png" title="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" alt="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" width="800px" /><img src="figure_raw/Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression5.png" title="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" alt="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" width="800px" />
 
 ```
 
@@ -170,12 +169,11 @@ Multiple R-squared:  0.54,	Adjusted R-squared:  0.524
 F-statistic: 34.4 on 3 and 88 DF,  p-value: 8.46e-15
 ```
 
-<img src="figure_raw/Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression1.png" title="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" alt="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" width="600px" /><img src="figure_raw/Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression2.png" title="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" alt="plot of chunk Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression" width="600px" />
-
 
 ## 4. Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying
 *Gender, self-esteem and victim of bullying.* We regressed peer-rated victim of bullying (Column M) onto gender (Column D), peer-rated self-esteem (Column O), and the interaction term (Column P) 
 
+<img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying1.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying2.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying3.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying4.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying5.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" width="800px" />
 
 ```
 
@@ -201,12 +199,11 @@ Multiple R-squared:  0.246,	Adjusted R-squared:  0.221
 F-statistic: 9.58 on 3 and 88 DF,  p-value: 1.54e-05
 ```
 
-<img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying1.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" width="600px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying2.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying" width="600px" />
-
 
 ## 5. Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim
 *Gender, self-esteem and defends the victim of bullying*. We regressed peer-rated defends the victim (Column Q) onto gender (Column D), peer-rated self-esteem (Column O), and the interaction term (Column P) 
 
+<img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim1.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim2.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim3.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim4.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="800px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim5.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="800px" />
 
 ```
 
@@ -232,61 +229,10 @@ Multiple R-squared:  0.152,	Adjusted R-squared:  0.123
 F-statistic: 5.24 on 3 and 88 DF,  p-value: 0.00225
 ```
 
-<img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim1.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="600px" /><img src="figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim2.png" title="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" alt="plot of chunk Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim" width="600px" />
-
 
 ## Appendix. InteractionPlayground
 
 
-```
-
-Call:
-lm(formula = ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * 
-    scale(ds$PeerRatedSelfEsteem))
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--0.9901 -0.2645  0.0104  0.2561  0.9830 
-
-Coefficients:
-                                                           Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                                                  0.6567     0.0447   14.69   <2e-16 ***
-scale(as.numeric(ds$Gender))                                 0.1265     0.0454    2.79   0.0065 ** 
-scale(ds$PeerRatedSelfEsteem)                                0.1579     0.0450    3.51   0.0007 ***
-scale(as.numeric(ds$Gender)):scale(ds$PeerRatedSelfEsteem)   0.0427     0.0457    0.93   0.3524    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.407 on 88 degrees of freedom
-Multiple R-squared:  0.152,	Adjusted R-squared:  0.123 
-F-statistic: 5.24 on 3 and 88 DF,  p-value: 0.00225
-```
-
-```
-
-Call:
-lm(formula = ds$PeerRatedDefendsTheVictim ~ 1 + ds$ZGender * 
-    ds$ZPeerRatedSelfEsteem)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--0.9890 -0.2649  0.0084  0.2556  0.9856 
-
-Coefficients:
-                                   Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                          0.6569     0.0447   14.69  < 2e-16 ***
-ds$ZGender                           0.1268     0.0454    2.79  0.00640 ** 
-ds$ZPeerRatedSelfEsteem              0.1579     0.0450    3.51  0.00071 ***
-ds$ZGender:ds$ZPeerRatedSelfEsteem   0.0431     0.0457    0.94  0.34842    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.407 on 88 degrees of freedom
-Multiple R-squared:  0.152,	Adjusted R-squared:  0.123 
-F-statistic: 5.24 on 3 and 88 DF,  p-value: 0.00224
-```
-
-<img src="figure_raw/InteractionPlayground.png" title="plot of chunk InteractionPlayground" alt="plot of chunk InteractionPlayground" width="600px" />
 
 
 ## Session Information
@@ -294,7 +240,7 @@ For the sake of documentation and reproducibility, the current report was build 
 
 
 ```
-Report created by Will at 2014-02-01, 10:41:40 -0600
+Report created by Will at 2014-02-01, 16:42:28 -0600
 ```
 
 ```
