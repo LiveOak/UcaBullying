@@ -43,7 +43,7 @@ summary(ds)
 
 #####################################
 ## @knitr Gender_PeerRatedDefensiveEgotism_PeerRatedBullying
-# summary(lm(PeerRatedBullying ~ 1 + ZScoresGender + ZScoresPeerRatedDefensiveEgotism + ZGenderByZPeerDefensiveEgotism, data=ds))
+# summary(lm(PeerRatedBullying ~ 1 + ZGender + ZPeerRatedDefensiveEgotism + ZGenderByZPeerDefensiveEgotism, data=ds))
 m <- lm(PeerRatedBullying ~ 1 + Gender*PeerRatedDefensiveEgotism, data=ds)
 
 PlotEffects(m)
@@ -84,17 +84,22 @@ PlotInteraction(dsPlot=ds, xName="PeerRatedSelfEsteem", yName="PeerRatedDefendsT
 rm(m)
 #####################################
 ## @knitr InteractionPlayground
-m <- lm(PeerRatedDefendsTheVictim ~ 1 + Gender*PeerRatedDefensiveEgotism, data=ds)
-m <- lm(PeerRatedDefendsTheVictim ~ 1 + Gender + PeerRatedDefensiveEgotism + Gender:PeerRatedDefensiveEgotism, data=ds)
-m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + as.numeric(ds$Gender) * scale(ds$PeerRatedDefensiveEgotism))
-m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * ds$PeerRatedDefensiveEgotism)
-m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * scale(ds$PeerRatedDefensiveEgotism))
+m <- lm(PeerRatedDefendsTheVictim ~ 1 + Gender*PeerRatedSelfEsteem, data=ds)
+m <- lm(PeerRatedDefendsTheVictim ~ 1 + Gender + PeerRatedSelfEsteem + Gender:PeerRatedSelfEsteem, data=ds)
+m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + as.numeric(ds$Gender) * scale(ds$PeerRatedSelfEsteem))
+m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * ds$PeerRatedSelfEsteem)
+m <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + scale(as.numeric(ds$Gender)) * scale(ds$PeerRatedSelfEsteem))
 summary(m)
 
-mS <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + ds$ZScoresGender * ds$ZScoresPeerRatedDefensiveEgotism)
-mS <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + ds$Gender * ds$ZScoresPeerRatedDefensiveEgotism)
+# ds$ZW_Gender <- scale(as.numeric(ds$Gender))
+# # ds$ZW_PeerRatedDefendsTheVictim <- scale(as.numeric(ds$PeerRatedDefendsTheVictim))
+# ds$ZW_PeerRatedSelfEsteem <- scale(ds$PeerRatedSelfEsteem)
+# # PlotInteraction(dsPlot=ds, xName="ZW_PeerRatedSelfEsteem", yName="PeerRatedDefendsTheVictim", colorName="ZW_Gender")
+
+# mS <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + ds$ZGender * ds$Z)
+mS <- lm(ds$PeerRatedDefendsTheVictim ~ 1 + ds$ZGender * ds$ZPeerRatedSelfEsteem)
 summary(mS)
 
-rm(m, mS)
+rm(m)#, mS
 
-qplot(scale(ds$PeerRatedDefensiveEgotism), ds$ZScoresPeerRatedDefensiveEgotism)
+qplot(scale(ds$PeerRatedDefensiveEgotism), ds$ZPeerRatedDefensiveEgotism)
