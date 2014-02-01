@@ -1,0 +1,85 @@
+Check Regression Assumptions of Pilot Data -Standardized Predictors
+=================================================
+This report graphs and runs tests to check the assumptions of the multiple regression.
+
+<!--  Set the working directory to the repository's base directory; this assumes the report is nested inside of only one directory.-->
+```{r, echo=TRUE, message=F} 
+opts_knit$set(root.dir='../')  #Don't combine this call with any other chunk -especially one that uses file paths.
+```
+
+<!-- Set the report-wide options, and point to the external code file. -->
+```{r set_options, echo=TRUE}
+require(knitr)
+opts_chunk$set(
+    results='show', 
+    comment = NA, 
+    tidy = FALSE,
+    fig.width = 5.5, 
+    fig.height = 4, 
+    out.width = "600px", #This affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
+    fig.path = 'figure_z/',     
+    dev = "png",
+#     dev = "pdf",
+    dpi = 400
+)
+echoChunks <- FALSE
+options(width=120) #So the output is 50% wider than the default.
+read_chunk("./Analysis/PilotRegressionZ.R") 
+```
+<!-- Load the packages.  Suppress the output when loading packages. --> 
+```{r LoadPackages, echo=echoChunks, message=FALSE}
+```
+
+<!-- Load any Global functions and variables declared in the R file.  Suppress the output. --> 
+```{r DeclareGlobals, echo=echoChunks, results='show', message=FALSE}
+```
+
+<!-- Declare any global functions specific to a Rmd output.  Suppress the output. --> 
+```{r, echo=echoChunks, message=FALSE}
+```
+
+<!-- Load the datasets.   -->
+```{r LoadDatasets, echo=echoChunks, results='show', message=FALSE}
+```
+
+<!-- Tweak the datasets.   -->
+```{r TweakDatasets, echo=echoChunks, results='show', message=FALSE}
+```
+
+## 1. Gender_PeerRatedDefensiveEgotism_PeerRatedBullying
+*Gender, defensive egotism, and bullying.* We regressed peer-rated bullying (Column B in the Excel file, Will) onto gender (Column D), peer-rated defensive egotism (Column F), and the interaction term (Column G). 
+
+```{r Gender_PeerRatedDefensiveEgotism_PeerRatedBullying, echo=echoChunks, results='show', message=TRUE}
+```
+
+## 2. Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism
+*Gender, defensive egotism, and assists or supports the bully.* When we re-ran the analyses above with peer-rated assists or supports the bully as the dependent variable (Column H, Will) (rather than peer-rated bullying), the pattern was almost identical to that in Figure 1. 
+
+```{r Gender_PeerRatedDefensiveEgotism_PeerRatedDefensiveEgotism, echo=echoChunks, results='show', message=TRUE}
+```
+
+## 3. Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression
+*Gender, defensive egotism and social aggression.* We regressed teacher-rated social aggression (Column I, Will) onto gender (Column D), teacher-rated defensive egotism (Column K), and the interaction term (Column L), 
+
+```{r Gender_TeacherRatedDefensiveEgotism_TeacherRatedSocialAggression, echo=echoChunks, results='show', message=TRUE}
+```
+
+## 4. Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying
+*Gender, self-esteem and victim of bullying.* We regressed peer-rated victim of bullying (Column M) onto gender (Column D), peer-rated self-esteem (Column O), and the interaction term (Column P) 
+
+```{r Gender_PeerRatedSelfEsteem_PeerRatedVictimOfBullying, echo=echoChunks, results='show', message=TRUE}
+```
+
+## 5. Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim
+*Gender, self-esteem and defends the victim of bullying*. We regressed peer-rated defends the victim (Column Q) onto gender (Column D), peer-rated self-esteem (Column O), and the interaction term (Column P) 
+
+```{r Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim, echo=echoChunks, results='show', message=TRUE}
+```
+
+## Session Information
+For the sake of documentation and reproducibility, the current report was build on a system using the following software.
+
+```{r session_info, echo=FALSE}
+cat("Report created by", Sys.info()["user"], "at", strftime(Sys.time(), "%F, %T %z"))
+sessionInfo()
+```
