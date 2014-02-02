@@ -27,7 +27,7 @@ PlotInteraction <- function( dsPlot, xName, yName, colorName="Gender" ) {
     theme(legend.position=c(0,1), legend.justification=c(0,1))
 }
 PlotEffects <- function( linearModel, xTitle="X", yTitle="Y" ) {  
-#   linearModel <- m
+  #   linearModel <- m
   fit <- summary(linearModel)
   mEffect <- effects::allEffects(linearModel)
   effects:::plot.efflist(mEffect, ci.style="lines", main=NULL)
@@ -58,14 +58,14 @@ PlotEffects <- function( linearModel, xTitle="X", yTitle="Y" ) {
   
   lineColor <- adjustcolor("gray10", alpha.f=.3)
   pointColor <- adjustcolor("gray10", alpha.f=.6)
-  # color="Gender",
-  g <- ggplot(newData, aes_string(x=colnames(linearModel$model)[3], y="PredictedY", label="Gender", linetype="Gender",  ymin="PredictedLower", ymax="PredictedUpper")) +
-    geom_errorbar(data=newData[abs(newData$EvalPoints)>0, ], width=.01, size=1, color=lineColor, linetype=1) +
-    geom_line(size=2, color=lineColor) +
-    scale_linetype_manual(values=c(3, 5)) +
+  # color="Gender",, linetype="Gender"
+  g <- ggplot(newData, aes_string(x=colnames(linearModel$model)[3], y="PredictedY", label="Gender", group="Gender", ymin="PredictedLower", ymax="PredictedUpper")) +
+    geom_errorbar(data=newData[abs(newData$EvalPoints)>0, ], width=0, size=2, color=lineColor, linetype=1) +
+    geom_path(size=2, color=lineColor, lineend="round") + #
+    #     scale_linetype_manual(values=c(3, 5)) +
     theme_bw() +
-    theme(axis.text = element_text(colour="gray40")) +
-    theme(axis.title = element_text(colour="gray40")) +
+    theme(axis.text = element_text(colour="gray20")) +
+    theme(axis.title = element_text(colour="gray20")) +
     theme(panel.border = element_rect(colour="gray80")) +
     theme(axis.ticks = element_line(colour="gray80")) +
     theme(legend.position="none") +
@@ -74,19 +74,13 @@ PlotEffects <- function( linearModel, xTitle="X", yTitle="Y" ) {
   print(g + geom_text(data=newData[newData$EvalPoints==0, ], vjust=-1) )
   
   g2 <- g + 
-    geom_point(data=d, mapping=aes(x=IV, y=DV, shape=Moderator, ymin=NULL, ymax=NULL, label=NULL, linetype=NULL), color=pointColor) +
+    geom_point(data=d, mapping=aes(x=IV, y=DV, shape=Moderator, group=Moderator, ymin=NULL, ymax=NULL, label=NULL, linetype=NULL), color=pointColor) +
     geom_text(data=newData[newData$EvalPoints==0, ], vjust=0) +
     scale_shape_manual(values=c("Male"="M", "Female"="F"))
   print(g2)
   
   print(fit)
 }
-
-# require(QuantPsyc)
-# 
-# lm.mod1 <- moderate.lm(x=PeerRatedDefensiveEgotism, z=Gender, y=PeerRatedBullying, data=linearModel$model)
-# ss.mod1 <- sim.slopes(lm.mod1, z=tra$values)
-# ss.mod1
 
 #####################################
 ## @knitr LoadDatasets
@@ -127,7 +121,7 @@ rm(m)
 m <- lm(PeerRatedVictimOfBullying ~ 1 + Gender*PeerRatedSelfEsteem, data=ds)
 
 PlotInteraction(dsPlot=ds, xName="PeerRatedSelfEsteem", yName="PeerRatedVictimOfBullying")
-PlotEffects(m, xTitle="Peer-rated Self-esteem", yTitle="Peer-rated Victing of Bullying")
+PlotEffects(m, xTitle="Peer-rated Self-esteem", yTitle="Peer-rated Victim of Bullying")
 
 rm(m)
 #####################################
