@@ -1,6 +1,8 @@
 UcaBullying
 ===========
 
+To view the analyses, please visit [this report](https://github.com/LiveOak/UcaBullying/blob/master/Analysis/PilotRegressionRaw.md).
+
 This repository supports the follow up analyses of the submitted manuscript, "Defensive Egotism and Bullying: Gender Differences Yield 
 Qualified Support for the Compensation Model of Aggression".  This was written by Paul R. Nail, Joan B. Simon*, and Elson Bihm ([University of Central Arkansas, Psychology and Counseling](http://uca.edu/psychology/faculty-research/)) and William Howard Beasley ([Howard Live Oak, LLC](http://howardliveoak.com/)).
 
