@@ -83,12 +83,13 @@ cat("The following cases are excluded: (", paste(casesToExclude, collapse=", "),
 ```
 
 ```
-The following cases are excluded: ( 47, 69, 76, 83 ). 
+The following cases are excluded: (  ). 
 This field is dynamically generated.  It will be empty if no cases are excluded.
 ```
 
 ```r
-ds <- ds[-casesToExclude, ]
+if( length(casesToExclude) > 0 )
+  ds <- ds[-casesToExclude, ]
 #####################################
 ```
 
@@ -106,20 +107,20 @@ lm(formula = PeerRatedBullying ~ 1 + Gender * PeerRatedDefensiveEgotism,
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--0.6069 -0.1794 -0.0572  0.1629  0.8579 
+-0.6470 -0.1746 -0.0624  0.1913  0.9961 
 
 Coefficients:
                                        Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                              -0.117      0.124   -0.94    0.348    
-GenderFemale                              0.264      0.169    1.56    0.123    
-PeerRatedDefensiveEgotism                 0.499      0.122    4.09  9.7e-05 ***
-GenderFemale:PeerRatedDefensiveEgotism   -0.449      0.195   -2.30    0.024 *  
+(Intercept)                              -0.132      0.121   -1.10    0.276    
+GenderFemale                              0.262      0.168    1.56    0.122    
+PeerRatedDefensiveEgotism                 0.538      0.119    4.52  1.9e-05 ***
+GenderFemale:PeerRatedDefensiveEgotism   -0.467      0.196   -2.39    0.019 *  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.296 on 84 degrees of freedom
-Multiple R-squared:  0.228,	Adjusted R-squared:   0.2 
-F-statistic: 8.25 on 3 and 84 DF,  p-value: 7.09e-05
+Residual standard error: 0.314 on 88 degrees of freedom
+Multiple R-squared:  0.253,	Adjusted R-squared:  0.227 
+F-statistic: 9.92 on 3 and 88 DF,  p-value: 1.06e-05
 ```
 
 
@@ -135,21 +136,21 @@ lm(formula = PeerRatedAssistsSupportsBully ~ 1 + Gender * PeerRatedDefensiveEgot
     data = ds)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--0.6243 -0.1645 -0.0603  0.1569  0.8313 
+   Min     1Q Median     3Q    Max 
+-0.646 -0.159 -0.068  0.161  0.814 
 
 Coefficients:
                                        Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                             -0.0499     0.1143   -0.44    0.664    
-GenderFemale                             0.1460     0.1559    0.94    0.352    
-PeerRatedDefensiveEgotism                0.4649     0.1123    4.14  8.2e-05 ***
-GenderFemale:PeerRatedDefensiveEgotism  -0.3328     0.1794   -1.86    0.067 .  
+(Intercept)                             -0.0552     0.1080   -0.51    0.610    
+GenderFemale                             0.1383     0.1497    0.92    0.358    
+PeerRatedDefensiveEgotism                0.4839     0.1063    4.55  1.7e-05 ***
+GenderFemale:PeerRatedDefensiveEgotism  -0.3368     0.1747   -1.93    0.057 .  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.273 on 84 degrees of freedom
-Multiple R-squared:  0.267,	Adjusted R-squared:  0.241 
-F-statistic: 10.2 on 3 and 84 DF,  p-value: 8.38e-06
+Residual standard error: 0.281 on 88 degrees of freedom
+Multiple R-squared:  0.29,	Adjusted R-squared:  0.265 
+F-statistic:   12 on 3 and 88 DF,  p-value: 1.22e-06
 ```
 
 
@@ -166,20 +167,20 @@ lm(formula = TeacherRatedSocialAggression ~ 1 + Gender * TeacherRatedDefensiveEg
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--0.5171 -0.1196 -0.0097  0.0889  0.7878 
+-0.5077 -0.1520 -0.0111  0.0937  0.7864 
 
 Coefficients:
                                           Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                                -0.0129     0.0537   -0.24    0.811    
-GenderFemale                                0.0226     0.0734    0.31    0.759    
-TeacherRatedDefensiveEgotism                0.5300     0.0682    7.77  1.7e-11 ***
-GenderFemale:TeacherRatedDefensiveEgotism   0.2798     0.1238    2.26    0.026 *  
+(Intercept)                                 0.0334     0.0558    0.60    0.551    
+GenderFemale                               -0.0223     0.0773   -0.29    0.773    
+TeacherRatedDefensiveEgotism                0.4743     0.0688    6.90  7.8e-10 ***
+GenderFemale:TeacherRatedDefensiveEgotism   0.3358     0.1306    2.57    0.012 *  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.237 on 84 degrees of freedom
-Multiple R-squared:  0.595,	Adjusted R-squared:  0.581 
-F-statistic: 41.1 on 3 and 84 DF,  p-value: <2e-16
+Residual standard error: 0.255 on 88 degrees of freedom
+Multiple R-squared:  0.54,	Adjusted R-squared:  0.524 
+F-statistic: 34.4 on 3 and 88 DF,  p-value: 8.46e-15
 ```
 
 
@@ -195,21 +196,21 @@ lm(formula = PeerRatedVictimOfBullying ~ 1 + Gender * PeerRatedSelfEsteem,
     data = ds)
 
 Residuals:
-   Min     1Q Median     3Q    Max 
--0.451 -0.118 -0.065  0.141  0.694 
+    Min      1Q  Median      3Q     Max 
+-0.7764 -0.1174 -0.0831  0.1490  1.4348 
 
 Coefficients:
                                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                         1.182      0.187    6.32  1.2e-08 ***
-GenderFemale                       -0.920      0.292   -3.15   0.0022 ** 
-PeerRatedSelfEsteem                -0.604      0.117   -5.15  1.7e-06 ***
-GenderFemale:PeerRatedSelfEsteem    0.497      0.198    2.50   0.0142 *  
+(Intercept)                         1.230      0.208    5.91  6.4e-08 ***
+GenderFemale                       -1.062      0.314   -3.38   0.0011 ** 
+PeerRatedSelfEsteem                -0.621      0.132   -4.70  9.6e-06 ***
+GenderFemale:PeerRatedSelfEsteem    0.579      0.216    2.69   0.0087 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.23 on 84 degrees of freedom
-Multiple R-squared:  0.28,	Adjusted R-squared:  0.254 
-F-statistic: 10.9 on 3 and 84 DF,  p-value: 4.12e-06
+Residual standard error: 0.288 on 88 degrees of freedom
+Multiple R-squared:  0.246,	Adjusted R-squared:  0.221 
+F-statistic: 9.58 on 3 and 88 DF,  p-value: 1.54e-05
 ```
 
 
@@ -226,20 +227,20 @@ lm(formula = PeerRatedDefendsTheVictim ~ 1 + Gender * PeerRatedSelfEsteem,
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--1.0166 -0.2553 -0.0063  0.2439  0.9968 
+-0.9901 -0.2645  0.0104  0.2561  0.9830 
 
 Coefficients:
                                  Estimate Std. Error t value Pr(>|t|)  
-(Intercept)                       0.00199    0.33261    0.01    0.995  
-GenderFemale                     -0.33571    0.51866   -0.65    0.519  
-PeerRatedSelfEsteem               0.38439    0.20866    1.84    0.069 .
-GenderFemale:PeerRatedSelfEsteem  0.39614    0.35289    1.12    0.265  
+(Intercept)                       -0.0401     0.2937   -0.14    0.892  
+GenderFemale                      -0.1615     0.4436   -0.36    0.717  
+PeerRatedSelfEsteem                0.4042     0.1866    2.17    0.033 *
+GenderFemale:PeerRatedSelfEsteem   0.2846     0.3045    0.93    0.352  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.408 on 84 degrees of freedom
-Multiple R-squared:  0.136,	Adjusted R-squared:  0.106 
-F-statistic: 4.42 on 3 and 84 DF,  p-value: 0.00615
+Residual standard error: 0.407 on 88 degrees of freedom
+Multiple R-squared:  0.152,	Adjusted R-squared:  0.123 
+F-statistic: 5.24 on 3 and 88 DF,  p-value: 0.00225
 ```
 
 
@@ -248,7 +249,7 @@ For the sake of documentation and reproducibility, the current report was build 
 
 
 ```
-Report created by Will at 2014-02-07, 12:46:43 -0600
+Report created by Will at 2014-02-07, 12:50:56 -0600
 ```
 
 ```

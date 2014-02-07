@@ -16,7 +16,7 @@ require(effects)
 ## @knitr DeclareGlobals
 pathInput <- "./Data/Derived/ForRegressionAssumptions.rds"
 casesToExclude <- c()
-casesToExclude <- c(47, 69, 76, 83) #Uncomment this to investigate potential outliers.  These points were identified from mild Cook's distances and descrepancies in the normal QQ plot.
+# casesToExclude <- c(47, 69, 76, 83) #Uncomment this to investigate potential outliers.  These points were identified from mild Cook's distances and descrepancies in the normal QQ plot.
 
 PlotInteraction <- function( dsPlot, xName, yName, colorName="Gender" ) {
   ggplot(dsPlot, aes_string(x=xName, y=yName, color=colorName)) +
@@ -93,7 +93,8 @@ summary(ds)
 #####################################
 ## @knitr TweakDatasets
 cat("The following cases are excluded: (", paste(casesToExclude, collapse=", "), "). \nThis field is dynamically generated.  It will be empty if no cases are excluded.")
-ds <- ds[-casesToExclude, ]
+if( length(casesToExclude) > 0 )
+  ds <- ds[-casesToExclude, ]
 #####################################
 ## @knitr Gender_PeerRatedDefensiveEgotism_PeerRatedBullying
 # summary(lm(PeerRatedBullying ~ 1 + ZGender + ZPeerRatedDefensiveEgotism + ZGenderByZPeerDefensiveEgotism, data=ds))
