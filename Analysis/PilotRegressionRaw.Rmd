@@ -43,7 +43,7 @@ read_chunk("./Analysis/PilotRegressionRaw.R")
 ```
 
 <!-- Tweak the datasets.   -->
-```{r TweakDatasets, echo=echoChunks, results='show', message=FALSE}
+```{r TweakDatasets, echo=TRUE, results='show', message=FALSE}
 ```
 
 ## 1. Gender_PeerRatedDefensiveEgotism_PeerRatedBullying
@@ -74,11 +74,6 @@ read_chunk("./Analysis/PilotRegressionRaw.R")
 *Gender, self-esteem and defends the victim of bullying*. We regressed peer-rated defends the victim (Column Q) onto gender (Column D), peer-rated self-esteem (Column O), and the interaction term (Column P) 
 
 ```{r Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim, echo=echoChunks, results='show', message=TRUE}
-```
-
-## Appendix. InteractionPlayground
-
-```{r InteractionPlayground, echo=echoChunks, results='show', message=TRUE}
 ```
 
 ## Session Information
