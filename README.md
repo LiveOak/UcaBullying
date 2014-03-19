@@ -13,5 +13,12 @@ Qualified Support for the Compensation Model of Aggression".  This was written b
 
 > Keywords: defensive egotism, bullying, compensation model, defensive compensation, bullying-related behaviors
 
+### Selected Figures
+To view the entire analyses, please visit [this report](https://github.com/LiveOak/UcaBullying/blob/master/Analysis/PilotRegressionRaw.md).
+
+<img src="https://raw.github.com/LiveOak/UcaBullying/master/Analysis/figure_raw/Gender_PeerRatedDefensiveEgotism_PeerRatedBullying1.png" alt="Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" style="width: 600px;"/>
+
+<img src="https://github.com/LiveOak/UcaBullying/blob/master/Analysis/figure_raw/Gender_PeerRatedSelfEsteem_PeerRatedDefendsTheVictim1.png" alt="Gender_PeerRatedDefensiveEgotism_PeerRatedBullying" style="width: 600px;"/>
+
 ### Support
 Research reported in this publication was supported in part by the Eunice Kennedy Shriver National Institute of Child Health & Human Development of the [National Institutes of Health under Award Number R15HD075229](http://taggs.hhs.gov/RecipInfo.CFM?SelEin=LCYqWy4%2BTE5MQzw7XFFKOEgK). The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
