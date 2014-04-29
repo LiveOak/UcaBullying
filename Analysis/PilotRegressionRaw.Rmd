@@ -14,12 +14,14 @@ opts_chunk$set(
     results='show', 
     comment = NA, 
     tidy = FALSE,
-    fig.width = 4.5, 
+    fig.width = 4, 
     fig.height = 4, 
     out.width = "800px", #This affects only the markdown, not the underlying png file.  The height will be scaled appropriately.
     fig.path = 'figure_raw/',     
     dev = "png",
 #     dev = "pdf",
+#     dev = "tiff",
+#     dpi = 600
     dpi = 400
 )
 echoChunks <- FALSE

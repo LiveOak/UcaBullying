@@ -64,12 +64,13 @@ PlotEffects <- function( linearModel, xTitle="X", yTitle="Y" ) {
   g <- ggplot(newData, aes_string(x=colnames(linearModel$model)[3], y="PredictedY", label="Gender", group="Gender", ymin="PredictedLower", ymax="PredictedUpper")) +
     geom_errorbar(data=newData[abs(newData$EvalPoints)>0, ], width=0, size=2, color=lineColor, linetype=1) +
     geom_path(size=2, color=lineColor, lineend="round") + #
+    coord_cartesian(ylim=c(-.05,2.05)) +
     #     scale_linetype_manual(values=c(3, 5)) +
     theme_bw() +
     theme(axis.text = element_text(colour="gray20")) +
     theme(axis.title = element_text(colour="gray20")) +
     theme(panel.border = element_rect(colour="gray80")) +
-    theme(axis.ticks = element_line(colour="gray80")) +
+    theme(axis.ticks.length = grid::unit(0, "cm")) +
     theme(legend.position="none") +
     labs(x=xTitle, y=yTitle)
   
