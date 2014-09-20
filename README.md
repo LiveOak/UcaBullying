@@ -1,10 +1,14 @@
+[![DOI](https://zenodo.org/badge/4971/LiveOak/UcaBullying.png)](http://dx.doi.org/10.5281/zenodo.11798)
+
 UcaBullying
 ===========
 
 To view the analyses, please visit [this report](https://github.com/LiveOak/UcaBullying/blob/master/Analysis/PilotRegressionRaw.md).
 
 This repository supports the follow up analyses of the submitted manuscript, "Defensive Egotism and Bullying: Gender Differences Yield 
-Qualified Support for the Compensation Model of Aggression" to be published in the *[Journal of School Violence](http://www.tandfonline.com/toc/wjsv20/current)*.  This was written by [Paul R. Nail](http://uca.edu/psychology/facultystaff/paul-nail/), [Joan B. Simon](http://uca.edu/psychology/facultystaff/joan-simon/)*, and [Elson Bihm](http://uca.edu/psychology/facultystaff/elson-bihm/) ([University of Central Arkansas, Psychology and Counseling](http://uca.edu/psychology/faculty-research/)) and [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ&hl=en) ([Howard Live Oak, LLC](http://howardliveoak.com/)).
+Qualified Support for the Compensation Model of Aggression" published in the *[Journal of School Violence](http://www.tandfonline.com/toc/wjsv20/current)*.  This was written by [Paul R. Nail](http://uca.edu/psychology/facultystaff/paul-nail/), [Joan B. Simon](http://uca.edu/psychology/facultystaff/joan-simon/)*, and [Elson Bihm](http://uca.edu/psychology/facultystaff/elson-bihm/) ([University of Central Arkansas, Psychology and Counseling](http://uca.edu/psychology/faculty-research/)) and [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ&hl=en) ([Howard Live Oak, LLC](http://howardliveoak.com/)).
+
+The article can be retreived at <http://www.tandfonline.com/doi/full/10.1080/15388220.2014.938270#.VB2jQPldWYI>.  The DOI of the code *repository* (not of the article itself) is [dx.doi.org/10.5281/zenodo.11798](http://dx.doi.org/10.5281/zenodo.11798).
 
 *Requests for reprints should be addressed to: Joan Simon, Ph.D., Associate Professor, 253 Mashburn Hall, University of Central Arkansas, Conway, AR 72035, USA, jsimon@uca.edu
 
