@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/4971/LiveOak/UcaBullying.png)](http://dx.doi.org/10.5281/zenodo.11798)
+[![DOI](https://zenodo.org/badge/16355757.svg)](https://zenodo.org/badge/latestdoi/16355757)
 
 UcaBullying
 ===========
@@ -25,6 +25,6 @@ To view the entire analyses, please visit [this report](https://github.com/LiveO
 Research reported in this publication was supported in part by the Eunice Kennedy Shriver National Institute of Child Health & Human Development of the [National Institutes of Health under Award Number R15HD075229](http://taggs.hhs.gov/RecipInfo.CFM?SelEin=LCYqWy4%2BTE5MQzw7XFFKOEgK). The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
 
 ### Contact and Reference
-The article can be retreived at <http://www.tandfonline.com/doi/full/10.1080/15388220.2014.938270#.VB2jQPldWYI>.  The DOI of the code *repository* (not of the article itself) is [dx.doi.org/10.5281/zenodo.11798](http://dx.doi.org/10.5281/zenodo.11798).
+The article can be retreived at <http://www.tandfonline.com/doi/full/10.1080/15388220.2014.938270#.VB2jQPldWYI>.  The DOI of the code *repository* (not of the article itself) is [doi.org/10.5281/zenodo.439605](http://doi.org/10.5281/zenodo.439605).
 
 *Requests for reprints should be addressed to: Joan Simon, Ph.D., Associate Professor, 253 Mashburn Hall, University of Central Arkansas, Conway, AR 72035, USA, jsimon@uca.edu
